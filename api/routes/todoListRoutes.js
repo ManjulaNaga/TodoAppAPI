@@ -1,6 +1,10 @@
 'use strict';
 module.exports = function(app){
   var todoList = require('../controllers/todoListController');
+  var cors = require('cors');
+
+  // use it before all route definitions
+  app.use(cors({origin: '*'}));
 
   //todoList routes
   app.route('/tasks')
